@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.theme-dark {
+    --tw-bg-dark-100: #f0f0f0; /* Define los colores oscuros */
+    /* Define otros estilos para el tema oscuro */
+  }
+
+  
+// styles with sass
+// $white: #ffffff;
+// $sub_none: none;
+// body {
+//     background-color: blueviolet;
+//     h1 {
+//         color: $white;
+//     }
+//     a {
+//         text-decoration: $sub_none;
+//         color: $white;
+//     }
+//     label {
+//         color: $white;
+//     }
+    
+// }
