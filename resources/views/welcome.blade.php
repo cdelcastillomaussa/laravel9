@@ -3,11 +3,13 @@
     <h1>INICIO</h1>
 @endcomponent --}}
 
-<x-layouts.app title="Home" metaDescription="Home meta description">
+<x-layouts.app 
+    title="Home" 
+    metaDescription="Home meta description">
     {{-- <x-slot name="title">
         Home Title
     </x-slot> --}}
-    <h1 class="my-4 font-serif text-3xl text-center text-sky-600 dark:text-sky-500">HOME</h1>
+    <h1 class="my-4 font-serif text-3xl text-center text-sky-600 dark:text-sky-500">Home</h1>
     {{-- <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
@@ -48,6 +50,9 @@
             </div>
         </div>
     </nav> --}}
+    @auth
+        <div class="text-white">Authenticate User: {{  Auth::user()->name }}</div>
+    @endauth
 </x-layouts.app>
 
 

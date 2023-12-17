@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\auth\RegisteredUserController;
+use App\Http\Controllers\AuthenticatedSessionController;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
@@ -53,9 +54,10 @@ Route::view('/contacto', 'contact')->name('contact');
 // Route::view('/blog', 'blog', ['posts' => $posts])->name('blog');
 Route::view('/about', 'about')->name('about');
 
-Route::get('/login', function(){
-    return 'Login Page';
-})->name('login');
+
+Route::view('/login', 'auth.login')->name('login');
+Route::post('/login', [AuthenticatedSessionController::class, 'store']);
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 Route::view('/register', 'auth.register')->name('register');
 Route::post('/register', [RegisteredUserController::class, 'store']);
